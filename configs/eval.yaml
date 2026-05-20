@@ -1,0 +1,9 @@
+k_values: [5, 10]
+n_groups: 200
+group_sizes: [3, 4, 5]
+baselines:
+  - average
+  - least_misery
+  - random
+seed: 42
+run_name: eval_baseline

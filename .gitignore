@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+.python-version
+
+# Project artifacts
+data/
+models/
+results/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
