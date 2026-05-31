@@ -14,6 +14,21 @@ pip install -r requirements.txt
 Note: `lightfm` may require build tools (Xcode CLI on macOS, build-essential on Linux). If
 installation fails, install a system C/C++ toolchain first and retry.
 
+### LLM server (context annotation)
+
+Context annotation queries an Ollama server (reachable over Tailscale). Configure it:
+
+```bash
+cp .env.example .env        # then set OLLAMA_HOST to the Tailscale host/IP
+```
+
+The model and request options live in `configs/data.yaml` under `llm:`; the host/port
+stay in `.env` (gitignored). Test connectivity and a sample response:
+
+```bash
+python tests/test_llm.py --config configs/data.yaml
+```
+
 ## Pipeline
 
 All scripts read a YAML config and write outputs under `results/<run_name>/`.

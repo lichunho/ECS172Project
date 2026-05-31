@@ -6,3 +6,5 @@ lightfm
 pyyaml
 tqdm
 matplotlib
+requests
+python-dotenv

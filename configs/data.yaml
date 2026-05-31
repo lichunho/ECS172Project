@@ -3,3 +3,11 @@ processed_dir: data/processed
 bgg_source: kaggle  # placeholder: kaggle | bgg_api | local
 min_ratings_per_user: 5
 min_ratings_per_game: 10
+
+# LLM (Ollama) used for context annotation. Host/port come from .env
+# (OLLAMA_HOST / OLLAMA_PORT); only non-secret settings live here.
+llm:
+  model: "gemma4:26b"
+  timeout_s: 120
+  options:
+    temperature: 0.0
