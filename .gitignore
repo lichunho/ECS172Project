@@ -12,6 +12,7 @@ env/
 data/
 models/
 results/
+plans/
 
 # Secrets / env
 .env
