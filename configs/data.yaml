@@ -11,3 +11,50 @@ llm:
   timeout_s: 120
   options:
     temperature: 0.0
+
+# Context label schema produced by src/annotate.py.
+# tier: 1=BGG field reshape, 2=category/mechanic rule, 3=LLM judgment
+annotation:
+  labels:
+    # Tier 1 — reshaped from BGG structured fields
+    - name: best_player_count_fit
+      tier: 1
+      scale: "int 1-5"
+    - name: language_dependence
+      tier: 1
+      scale: "int 1-5"
+    - name: min_age_fit
+      tier: 1
+      scale: "int 1-5"
+    - name: complexity
+      tier: 1
+      scale: "int 1-5"
+    # Tier 2 — derived from category/mechanic tag lookup
+    - name: player_elimination
+      tier: 2
+      scale: "int 1-5"   # 1=absent, 5=present
+    - name: coop_vs_competitive
+      tier: 2
+      scale: "str: coop | semi-coop | team | competitive"
+    - name: social_conflict
+      tier: 2
+      scale: "int 1-5"   # 1=absent, 5=present
+    # Tier 3 — LLM judgment (one chat call per game)
+    - name: party_friendliness
+      tier: 3
+      scale: "int 1-5"
+    - name: interaction_level
+      tier: 3
+      scale: "int 1-5"
+    - name: competitiveness
+      tier: 3
+      scale: "int 1-5"
+    - name: downtime
+      tier: 3
+      scale: "int 1-5"
+    - name: teach_time
+      tier: 3
+      scale: "int 1-5"
+    - name: mixed_skill_robustness
+      tier: 3
+      scale: "int 1-5"

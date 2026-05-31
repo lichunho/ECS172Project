@@ -29,6 +29,12 @@ stay in `.env` (gitignored). Test connectivity and a sample response:
 python tests/test_llm.py --config configs/data.yaml
 ```
 
+Smoke-test the full annotation pipeline on 3 in-memory games (no `games.parquet` required):
+
+```bash
+python tests/test_annotate.py --config configs/data.yaml
+```
+
 ## Pipeline
 
 All scripts read a YAML config and write outputs under `results/<run_name>/`.
