@@ -8,3 +8,4 @@ tqdm
 matplotlib
 requests
 python-dotenv
+pyarrow

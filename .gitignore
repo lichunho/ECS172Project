@@ -9,6 +9,7 @@ env/
 .python-version
 
 # Project artifacts
+archive/
 data/
 models/
 results/
