@@ -137,12 +137,6 @@ def _tier1_row(row: pd.Series) -> dict:
     # complexity — directly from BGG averageweight
     result["complexity"] = _complexity_from_weight(row.get("weight"))
 
-    # best_player_count_fit — presence of suggested_numplayers indicates the
-    # poll was collected; M1 is expected to distil it to a numeric fit score.
-    # If absent (poll data missing for this game), leave NA.
-    snp = row.get("suggested_numplayers")
-    result["best_player_count_fit"] = pd.NA if pd.isna(snp) else int(max(1, min(5, round(float(snp)))))
-
     # language_dependence — BGG 5-level poll (1=no dependence, 5=unplayable
     # without language). If M1 hasn't parsed it yet, leave NA.
     ld = row.get("language_dependence_poll")
@@ -316,7 +310,6 @@ def annotate_games(
       weight       — BGG averageweight float in [1.0, 5.0] (used for complexity + Tier-3 prompt)
 
     Optional Tier-1 fields (per-row; missing rows get pd.NA for that label):
-      suggested_numplayers     — numeric fit score for group size (1–5); produced by M1
       language_dependence_poll — numeric language dependence level (1–5); produced by M1
       minage                   — BGG minimum age (raw integer)
       suggested_playerage      — BGG suggested player age from poll (raw integer)
@@ -324,7 +317,6 @@ def annotate_games(
     OUTPUT LABEL COLUMNS
     --------------------
     Tier 1 (no LLM — reshaped BGG fields):
-      best_player_count_fit  int 1–5, or pd.NA if field absent
       language_dependence    int 1–5, or pd.NA if field absent
       min_age_fit            int 1–5, or pd.NA if field absent
       complexity             int 1–5, or pd.NA if weight absent

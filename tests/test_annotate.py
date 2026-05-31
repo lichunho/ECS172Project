@@ -26,7 +26,7 @@ from src import annotate  # noqa: E402
 _COOP_VALUES = {"coop", "semi-coop", "team", "competitive"}
 
 # All expected label columns after annotation
-_TIER1_LABELS = ["best_player_count_fit", "language_dependence", "min_age_fit", "complexity"]
+_TIER1_LABELS = ["language_dependence", "min_age_fit", "complexity"]
 _TIER2_LABELS = ["player_elimination", "coop_vs_competitive", "social_conflict"]
 _TIER3_LABELS = [
     "party_friendliness",
@@ -61,7 +61,6 @@ def _build_test_games() -> pd.DataFrame:
             # Tier-1 optional fields present
             "minage": 14,
             "suggested_playerage": 10,
-            "suggested_numplayers": None,   # poll not available for this game
             "language_dependence_poll": 4,  # heavy language dependence
         },
         {
@@ -162,8 +161,8 @@ def main() -> int:
             )
 
     # 5. Twilight Imperium (row 1) — Tier-1 optional fields were omitted from
-    #    input, so min_age_fit and best_player_count_fit must be pd.NA.
-    for col in ["min_age_fit", "best_player_count_fit"]:
+    #    input, so min_age_fit must be pd.NA.
+    for col in ["min_age_fit"]:
         if col in result.columns:
             val = result.loc[1, col]
             if not pd.isna(val):

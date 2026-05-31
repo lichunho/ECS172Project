@@ -17,9 +17,6 @@ llm:
 annotation:
   labels:
     # Tier 1 — reshaped from BGG structured fields
-    - name: best_player_count_fit
-      tier: 1
-      scale: "int 1-5"
     - name: language_dependence
       tier: 1
       scale: "int 1-5"
