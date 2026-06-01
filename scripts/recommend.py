@@ -42,6 +42,10 @@ def main() -> None:
     score_matrix = model.predict(user_ids, item_ids)
     group_scores = aggregation.aggregate(score_matrix, **cfg["aggregation"])
     group_scores = context.adjust(group_scores, feasible, cfg["context"])
+    # 5. Soft player-count fit (BGG poll vs this group's size).
+    group_scores = group_scores * context.player_count_factor(
+        feasible, cfg["constraints"].get("n_players")
+    )
 
     top_k = cfg["top_k"]
     order = np.argsort(-group_scores)[:top_k]

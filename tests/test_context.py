@@ -15,7 +15,14 @@ from numpy.testing import assert_allclose
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src.context import GAMMA, adjust, _centered  # noqa: E402
+from src.context import (  # noqa: E402
+    GAMMA,
+    PLAYER_COUNT_BEST_BOOST,
+    PLAYER_COUNT_OFF_PENALTY,
+    adjust,
+    player_count_factor,
+    _centered,
+)
 
 # Context under test: party/friends.
 # Active setting weights (from _SETTING_WEIGHTS["party"]):
@@ -173,3 +180,49 @@ class TestAdjust:
         games = pd.DataFrame({"party_friendliness": [5]})
         adjusted = adjust(np.array([4.0]), games, _CTX_PARTY_FRIENDS)
         assert_allclose(adjusted, [4.0 * 1.25], rtol=1e-9)
+
+
+class TestPlayerCountFactor:
+
+    def _frame(self, best, good):
+        return pd.DataFrame({"best_player_count": best, "good_player_counts": good})
+
+    def test_best_count_boosts(self):
+        games = self._frame([4], [[2, 3, 4]])
+        assert_allclose(player_count_factor(games, 4), [1.0 + PLAYER_COUNT_BEST_BOOST])
+
+    def test_not_in_good_list_penalizes(self):
+        games = self._frame([4], [[2, 3, 4]])
+        assert_allclose(player_count_factor(games, 6), [1.0 - PLAYER_COUNT_OFF_PENALTY])
+
+    def test_in_good_but_not_best_is_neutral(self):
+        # 2 is a "good" count but not the best (4) -> no boost, no penalty.
+        games = self._frame([4], [[2, 3, 4]])
+        assert_allclose(player_count_factor(games, 2), [1.0])
+
+    def test_na_best_and_empty_good_is_neutral(self):
+        games = self._frame([pd.NA], [[]])
+        assert_allclose(player_count_factor(games, 4), [1.0])
+
+    def test_none_n_players_is_neutral(self):
+        games = self._frame([2], [[2]])
+        assert_allclose(player_count_factor(games, None), [1.0])
+
+    def test_missing_columns_is_neutral(self):
+        games = pd.DataFrame({"name": ["x", "y"]})
+        assert_allclose(player_count_factor(games, 4), [1.0, 1.0])
+
+    def test_best_wins_over_penalty(self):
+        # best == n_players takes precedence even if good list is non-empty.
+        games = self._frame([4], [[2]])
+        assert_allclose(player_count_factor(games, 4), [1.0 + PLAYER_COUNT_BEST_BOOST])
+
+    def test_vectorized_mixed_rows(self):
+        games = self._frame([4, 2, pd.NA], [[2, 3, 4], [2], []])
+        # row0: best=4 -> boost; row1: best=2, good=[2], n=4 not in good -> penalty;
+        # row2: na best, empty good -> neutral
+        result = player_count_factor(games, 4)
+        assert_allclose(
+            result,
+            [1.0 + PLAYER_COUNT_BEST_BOOST, 1.0 - PLAYER_COUNT_OFF_PENALTY, 1.0],
+        )

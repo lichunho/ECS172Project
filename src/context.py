@@ -87,3 +87,48 @@ def adjust(scores: np.ndarray, games: pd.DataFrame, context: dict) -> np.ndarray
 
     factor = np.clip(1.0 + GAMMA * context_term, 0.1, None)
     return scores * factor
+
+
+# How hard the player-count poll nudges the ranking (kept small — it is a soft tie-breaker).
+PLAYER_COUNT_BEST_BOOST = 0.15
+PLAYER_COUNT_OFF_PENALTY = 0.15
+
+
+def player_count_factor(games: pd.DataFrame, n_players: int | None) -> np.ndarray:
+    """Soft recommend-time fit of each game to a group of `n_players`.
+
+    Uses the BGG community poll carried from M1 (`data.py`): `best_player_count`
+    (single best count) and `good_player_counts` (list of counts voted "good").
+    This is the group's-size-dependent computation the M1/M2 plans deferred out of
+    static annotation.
+
+    Returns a multiplicative factor aligned with `games`:
+      - boost (1 + BEST_BOOST) when `n_players` is the game's best count;
+      - penalty (1 - OFF_PENALTY) when `good_player_counts` is non-empty and
+        `n_players` is not in it (positive evidence the size plays poorly);
+      - neutral (1.0) otherwise — including when both fields are absent, so a game
+        is never penalized for missing poll data.
+    """
+    n = len(games)
+    if n_players is None:
+        return np.ones(n)
+
+    if "best_player_count" in games.columns:
+        best = games["best_player_count"].to_numpy()
+    else:
+        best = np.full(n, pd.NA, dtype="object")
+    if "good_player_counts" in games.columns:
+        good = games["good_player_counts"].to_numpy()
+    else:
+        good = np.empty(n, dtype="object")
+
+    factor = np.ones(n, dtype="float64")
+    for i in range(n):
+        b = best[i]
+        if pd.notna(b) and int(b) == n_players:
+            factor[i] = 1.0 + PLAYER_COUNT_BEST_BOOST
+            continue
+        g = good[i]
+        if isinstance(g, (list, np.ndarray)) and len(g) > 0 and n_players not in {int(x) for x in g}:
+            factor[i] = 1.0 - PLAYER_COUNT_OFF_PENALTY
+    return factor
