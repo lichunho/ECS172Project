@@ -1,0 +1,67 @@
+{
+  "user_ids": [
+    37603,
+    26676,
+    164243
+  ],
+  "context": {
+    "setting": "party",
+    "familiarity": "friends"
+  },
+  "constraints": {
+    "n_players": 4,
+    "max_playtime_min": 60
+  },
+  "recommendations": [
+    {
+      "game_id": 21643,
+      "name": "The Crew: Mission Deep Sea",
+      "group_score": 14.417810043593802
+    },
+    {
+      "game_id": 15611,
+      "name": "Sushi Go Party!",
+      "group_score": 12.988696962336503
+    },
+    {
+      "game_id": 12014,
+      "name": "Sushi Go!",
+      "group_score": 12.746329318054993
+    },
+    {
+      "game_id": 18937,
+      "name": "Just One",
+      "group_score": 12.443969967048423
+    },
+    {
+      "game_id": 20360,
+      "name": "The Crew: The Quest for Planet Nine",
+      "group_score": 12.252680302137158
+    },
+    {
+      "game_id": 185,
+      "name": "Tichu",
+      "group_score": 12.215344238394731
+    },
+    {
+      "game_id": 14143,
+      "name": "Middara: Unintentional Malum \u2013 Act 1",
+      "group_score": 12.214776040637847
+    },
+    {
+      "game_id": 20069,
+      "name": "Love Letter",
+      "group_score": 12.14085067035204
+    },
+    {
+      "game_id": 19124,
+      "name": "Zombie Kidz Evolution",
+      "group_score": 11.99078659973404
+    },
+    {
+      "game_id": 13588,
+      "name": "Ticket to Ride: 10th Anniversary",
+      "group_score": 11.962502118344664
+    }
+  ]
+}

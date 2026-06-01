@@ -1,0 +1,3403 @@
+[
+  {
+    "user_ids": [
+      37603,
+      26676,
+      164243
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 120
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      90113,
+      193623,
+      79515,
+      63927,
+      34525
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      11892,
+      206105,
+      165868,
+      61158
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 90
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      99443,
+      36305,
+      107456,
+      72295,
+      182395
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 120
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      109356,
+      26992,
+      251645,
+      144006
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      171626,
+      141590,
+      22419
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": null
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      199796,
+      74190,
+      218176,
+      1689
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 120
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      97370,
+      54075,
+      187824,
+      125135
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 30
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      158314,
+      101508,
+      29550,
+      60222
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 120
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      232749,
+      7990,
+      52872
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": null
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      178161,
+      156916,
+      34500
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      65918,
+      30583,
+      4029,
+      63347
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 90
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      61967,
+      89387,
+      82871,
+      182581,
+      171528
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 30
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      106831,
+      21191,
+      72809,
+      229023
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 60
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      53032,
+      14128,
+      176514,
+      94633,
+      190137
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 60
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      130029,
+      120009,
+      70106,
+      170952,
+      31434
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 120
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      156086,
+      28567,
+      81750,
+      42881
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 120
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      285815,
+      93958,
+      134997
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 30
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      72760,
+      87109,
+      186195
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": null
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      157231,
+      149718,
+      202725
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 30
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      120308,
+      59460,
+      200882,
+      25242
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 30
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      34608,
+      180074,
+      255666
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 60
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      192435,
+      265092,
+      93909
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 120
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      36706,
+      154278,
+      16355
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": null
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      206670,
+      222259,
+      179526,
+      16234,
+      42292
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 120
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      1570,
+      252830,
+      267747,
+      18294
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 30
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      102824,
+      169436,
+      197307,
+      240110,
+      52097
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 60
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      135313,
+      278868,
+      27375,
+      87996,
+      51180
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 120
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      6374,
+      179114,
+      18348,
+      145076
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      76009,
+      265610,
+      181106,
+      108575,
+      6358
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 30
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      115433,
+      203750,
+      43016,
+      1750
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 120
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      111911,
+      141970,
+      65026,
+      91675,
+      133813
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": null
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      204956,
+      81633,
+      109423,
+      117029,
+      19003
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": null
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      11862,
+      101753,
+      255653,
+      18853,
+      218777
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 60
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      55786,
+      28376,
+      141480,
+      25976,
+      30291
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 120
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      11713,
+      109718,
+      75597
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": null
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      21353,
+      88387,
+      59010
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 60
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      88108,
+      259182,
+      153121
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 30
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      27985,
+      183697,
+      247521,
+      219652,
+      221272
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      204909,
+      191108,
+      44359,
+      205668,
+      129481
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 60
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      115222,
+      133387,
+      43788
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      105305,
+      61041,
+      182957,
+      48067
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": null
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      136754,
+      263540,
+      152616,
+      222585
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 120
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      173674,
+      140232,
+      8880,
+      45189
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": null
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      173797,
+      201181,
+      36696,
+      163625
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 30
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      166896,
+      14978,
+      20100,
+      113342,
+      177642
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 30
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      190393,
+      151600,
+      150833,
+      86398
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": null
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      5948,
+      92449,
+      94447,
+      77385,
+      48166
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 60
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      191895,
+      72353,
+      225141,
+      152317,
+      52658
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 30
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      184732,
+      154874,
+      147420,
+      42956,
+      32408
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 30
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      21277,
+      52760,
+      217437,
+      87695,
+      208137
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 120
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      85528,
+      41200,
+      4439,
+      106070
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 120
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      13371,
+      231769,
+      309667,
+      75070,
+      182754
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 30
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      18282,
+      151930,
+      38345,
+      235120
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 30
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      30628,
+      3479,
+      223049
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": null
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      10210,
+      46810,
+      45482,
+      160098,
+      193547
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": null
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      52921,
+      185509,
+      31617,
+      143426,
+      34228
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      35963,
+      2810,
+      9465
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": null
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      20795,
+      31465,
+      2550,
+      180352,
+      80782
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 30
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      34005,
+      188770,
+      120369,
+      97276,
+      139316
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 60
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      153045,
+      175539,
+      160602,
+      66790,
+      185955
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 120
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      83647,
+      114950,
+      39327,
+      185963
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 120
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      88531,
+      89849,
+      139202,
+      155435,
+      29466
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 90
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      137647,
+      129094,
+      121973,
+      155158
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 60
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      176676,
+      102423,
+      233923,
+      43376
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 90
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      112424,
+      62028,
+      112710,
+      204167,
+      47047
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": null
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      27576,
+      12534,
+      22113,
+      61154,
+      48069
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      45663,
+      74341,
+      85300,
+      169513,
+      27943
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": null
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      300395,
+      87877,
+      61328
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 120
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      62139,
+      168326,
+      11947,
+      124641
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": null
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      155894,
+      125238,
+      25530,
+      193724,
+      287170
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": null
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      10510,
+      158206,
+      65035,
+      61991,
+      63695
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": null
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      72556,
+      160228,
+      153654,
+      120570
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 120
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      27280,
+      148519,
+      151934,
+      209986
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 60
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      60061,
+      21585,
+      208068,
+      137638
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 90
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      2900,
+      28093,
+      87378,
+      35745
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 120
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      142245,
+      54802,
+      181471,
+      198487,
+      270012
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": null
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      155877,
+      172320,
+      111153,
+      226907
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": null
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      20488,
+      92033,
+      195828
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 90
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      263739,
+      28013,
+      56497,
+      199464,
+      175640
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 30
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      43452,
+      122311,
+      20869,
+      214828
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 60
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      236359,
+      93271,
+      199796,
+      51544
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 30
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      170512,
+      183064,
+      19602,
+      157314
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 60
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      71024,
+      34940,
+      236314,
+      71365,
+      178915
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      42852,
+      139324,
+      234629
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 120
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      127060,
+      166896,
+      74851,
+      36152,
+      109713
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 120
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      321606,
+      195330,
+      87973,
+      117075
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 30
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      132520,
+      209768,
+      167478
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 90
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      6968,
+      68562,
+      138807,
+      210285,
+      150344
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 90
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      180398,
+      108613,
+      257705,
+      119648
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 60
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      277169,
+      60269,
+      64157,
+      115557
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 30
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      73676,
+      34826,
+      40282
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 30
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      136674,
+      152420,
+      188696,
+      91587
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 120
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      189758,
+      197485,
+      51748
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 60
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      93091,
+      46766,
+      9213
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 120
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      62226,
+      18813,
+      4323
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 120
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      121282,
+      22856,
+      66608
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      59559,
+      115195,
+      108929
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      51515,
+      27465,
+      1978,
+      21630,
+      48374
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      88597,
+      245695,
+      156471
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 120
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      103739,
+      106758,
+      8665
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 30
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      6116,
+      177412,
+      1380,
+      653
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 30
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      175505,
+      84574,
+      38461,
+      171941,
+      193249
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 120
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      209714,
+      57153,
+      29768,
+      299254
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": null
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      175754,
+      71657,
+      197020,
+      14162
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 120
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      230840,
+      7436,
+      176496
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 30
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      169218,
+      59302,
+      30277,
+      206547,
+      176942
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 60
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      191539,
+      21325,
+      50847
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 60
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      174364,
+      296487,
+      173356
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 30
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      64185,
+      95766,
+      130177,
+      275536,
+      135880
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 30
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      116325,
+      193509,
+      208146,
+      45137
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 120
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      182002,
+      51949,
+      129509,
+      183170,
+      171620
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 30
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      184074,
+      238569,
+      177367
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 120
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      162966,
+      51386,
+      32900,
+      27088
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 60
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      105862,
+      72400,
+      156066
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 120
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      249577,
+      130674,
+      18737,
+      93233,
+      187246
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 30
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      4104,
+      96499,
+      38337
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": null
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      68746,
+      151028,
+      80129,
+      150602,
+      62946
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 120
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      181807,
+      52733,
+      76733,
+      11706
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 30
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      173922,
+      17704,
+      37035,
+      46543
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 60
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      101702,
+      13539,
+      104394,
+      113645
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      85472,
+      69483,
+      36669
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 120
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      216965,
+      277947,
+      18844
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 90
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      163948,
+      90183,
+      68860
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 120
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      234292,
+      64894,
+      150946,
+      54435
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 60
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      71511,
+      49242,
+      17591,
+      248728,
+      171710
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 60
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      13674,
+      126079,
+      72550
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 120
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      208377,
+      66971,
+      179121
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 60
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      159918,
+      5049,
+      192221
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 60
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      42377,
+      52581,
+      245308,
+      25166
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": null
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      208406,
+      7482,
+      32811
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": null
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      55356,
+      117296,
+      177910
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": null
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      74010,
+      198519,
+      100018
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 120
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      186505,
+      21060,
+      101242,
+      218007
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": null
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      116143,
+      56276,
+      91487
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": null
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      110237,
+      190064,
+      95150
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 120
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      155086,
+      79710,
+      84979,
+      62950
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 120
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      188042,
+      269895,
+      221977,
+      108324
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 90
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      222878,
+      290061,
+      54215
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 30
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      72828,
+      170827,
+      175914
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 90
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      54136,
+      184232,
+      134263
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 90
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      179463,
+      88926,
+      25928,
+      216980
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 30
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      179739,
+      36428,
+      234215,
+      205656,
+      185250
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 60
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      61859,
+      226897,
+      175258,
+      225380,
+      159058
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": null
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      107522,
+      181824,
+      110974,
+      29240
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 120
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      57661,
+      189055,
+      227384,
+      198504
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": null
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      243156,
+      270625,
+      226600,
+      93456
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": null
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      44384,
+      183041,
+      178575
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 120
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      151173,
+      107003,
+      113288
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 120
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      1338,
+      131038,
+      72743,
+      6974,
+      30723
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 30
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      67550,
+      79614,
+      50518,
+      329161,
+      23424
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 120
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      151914,
+      24827,
+      240281,
+      243316,
+      12410
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 60
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      226260,
+      51626,
+      47280,
+      164171
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 60
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      202196,
+      48434,
+      270231,
+      26096,
+      87973
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 30
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      164603,
+      182136,
+      82208,
+      74051
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": null
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      190464,
+      37392,
+      176956,
+      168980
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      69953,
+      15467,
+      64666,
+      34345,
+      135122
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": null
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      196165,
+      178702,
+      79206,
+      37840,
+      161385
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      7742,
+      16580,
+      80095,
+      87576
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 120
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      170785,
+      98903,
+      108844
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 120
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      21360,
+      182357,
+      257356
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 30
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      285920,
+      186555,
+      58551
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 60
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      215536,
+      216381,
+      253460
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 90
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      176235,
+      178564,
+      1487,
+      146183
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      149609,
+      174124,
+      109771
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 60
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      28774,
+      77733,
+      181075,
+      68834,
+      127247
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 90
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      101214,
+      294,
+      60281,
+      3084
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 30
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      145240,
+      165715,
+      153349,
+      51367,
+      68439
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 60
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      38614,
+      5275,
+      12790,
+      53865,
+      7259
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 60
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      38077,
+      46866,
+      219772
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": null
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      69339,
+      8105,
+      43998,
+      36643,
+      3428
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": null
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      81861,
+      7875,
+      39527,
+      92752,
+      114452
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": null
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      88630,
+      272679,
+      89747,
+      96900,
+      57058
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 120
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      290268,
+      61299,
+      54901,
+      88655
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      230841,
+      202792,
+      67830,
+      209412
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 90
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      15405,
+      89510,
+      152180,
+      40306,
+      66338
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 120
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      204771,
+      152216,
+      198605,
+      199231,
+      157868
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      230558,
+      183249,
+      266616
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      60695,
+      5659,
+      173265,
+      82214,
+      188793
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      252501,
+      206197,
+      158792
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 60
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      57847,
+      211173,
+      61073,
+      189844,
+      147514
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": null
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      107608,
+      256655,
+      210726,
+      236553,
+      110213
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      174503,
+      128587,
+      144167
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 30
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      24911,
+      218041,
+      229552,
+      68681
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 30
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      43226,
+      118393,
+      188906
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 120
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      163425,
+      252526,
+      266080,
+      152934
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      258587,
+      135068,
+      73671,
+      82772
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 90
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      71145,
+      89081,
+      152264,
+      219781
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 90
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      38157,
+      294508,
+      158176,
+      7197
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 60
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      204195,
+      230350,
+      182855
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": null
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      304028,
+      4171,
+      50644,
+      270802,
+      50970
+    ],
+    "context": {
+      "setting": "casual",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": 30
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      16861,
+      37387,
+      56051,
+      161194
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 30
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      150538,
+      71772,
+      235496,
+      245841,
+      22805
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": null
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      103835,
+      264986,
+      183452
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 60
+    },
+    "group_type": "random"
+  },
+  {
+    "user_ids": [
+      41826,
+      54995,
+      261391,
+      191895
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 4,
+      "max_playtime_min": 30
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      263232,
+      195573,
+      62094
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": null
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      18047,
+      104933,
+      50743,
+      262468,
+      166107
+    ],
+    "context": {
+      "setting": "party",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 5,
+      "max_playtime_min": null
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      226460,
+      144958,
+      182049
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": null
+    },
+    "group_type": "divergent"
+  },
+  {
+    "user_ids": [
+      113576,
+      97679,
+      51475
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "strangers"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 60
+    },
+    "group_type": "similar"
+  },
+  {
+    "user_ids": [
+      41577,
+      186481,
+      39380
+    ],
+    "context": {
+      "setting": "competitive",
+      "familiarity": "friends"
+    },
+    "constraints": {
+      "n_players": 3,
+      "max_playtime_min": 90
+    },
+    "group_type": "divergent"
+  }
+]
