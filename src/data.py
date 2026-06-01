@@ -5,6 +5,7 @@ from __future__ import annotations
 from pathlib import Path
 
 import pandas as pd
+import pyarrow.parquet as pq
 
 
 # Cat:* column names in games.csv → label values in the categories list
@@ -18,6 +19,24 @@ _CAT_COLS = [
     "Cat:Party",
     "Cat:Childrens",
 ]
+
+_SUBSET_PRESETS: dict[str, dict[str, int | None]] = {
+    "current": {
+        "max_ratings": 50000,
+        "max_games": 1000,
+        "max_users": 5000,
+    },
+    "x5": {
+        "max_ratings": 250000,
+        "max_games": 5000,
+        "max_users": 25000,
+    },
+    "full": {
+        "max_ratings": None,
+        "max_games": None,
+        "max_users": None,
+    },
+}
 
 
 def _parse_good_player_counts(val) -> list[int]:
@@ -218,5 +237,84 @@ def preprocess(
 
     games["game_id"] = games["game_id"].map(bgid_to_dense).astype("int32")
     ratings["game_id"] = ratings["game_id"].map(bgid_to_dense).astype("int32")
+
+    return ratings.reset_index(drop=True), games.reset_index(drop=True)
+
+
+def load_parquet_head(path: str | Path, n_rows: int | None, columns: list[str] | None = None) -> pd.DataFrame:
+    """Load up to `n_rows` rows from a parquet file without reading the full table.
+
+    Falls back to pandas.read_parquet when `n_rows` is None.
+    """
+    path = Path(path)
+    if n_rows is None:
+        return pd.read_parquet(path, columns=columns)
+    if n_rows <= 0:
+        return pd.DataFrame(columns=columns or [])
+
+    parquet_file = pq.ParquetFile(path)
+    frames: list[pd.DataFrame] = []
+    remaining = int(n_rows)
+    for batch in parquet_file.iter_batches(batch_size=min(remaining, 65536), columns=columns):
+        frame = batch.to_pandas()
+        if len(frame) > remaining:
+            frame = frame.iloc[:remaining]
+        frames.append(frame)
+        remaining -= len(frame)
+        if remaining <= 0:
+            break
+
+    if not frames:
+        return pd.DataFrame(columns=columns or [])
+    return pd.concat(frames, ignore_index=True)
+
+
+def load_processed_subset(processed_dir: str | Path, subset: dict | None = None) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Load a small, training-friendly subset of processed ratings and games.
+
+    The subset is selected by first taking up to `max_ratings` rows from the
+    ratings parquet, then keeping only the most frequent `max_games` and
+    `max_users` inside that slice if limits are provided.
+    """
+    processed_dir = Path(processed_dir)
+
+    subset = subset or {}
+    profile = subset.get("profile")
+    if profile is not None:
+        if profile not in _SUBSET_PRESETS:
+            raise ValueError(f"unknown subset profile: {profile!r}. Expected one of {sorted(_SUBSET_PRESETS)}")
+        resolved_subset = dict(_SUBSET_PRESETS[profile])
+        for key in ("max_ratings", "max_games", "max_users"):
+            if key in subset and subset[key] is not None:
+                resolved_subset[key] = subset[key]
+        subset = resolved_subset
+
+    max_ratings = subset.get("max_ratings")
+    max_games = subset.get("max_games")
+    max_users = subset.get("max_users")
+
+    ratings = load_parquet_head(processed_dir / "ratings.parquet", max_ratings, columns=["user_id", "game_id", "rating"])
+
+    games_path = processed_dir / "games_annotated.parquet"
+    if not games_path.exists():
+        games_path = processed_dir / "games.parquet"
+    games = pd.read_parquet(games_path)
+
+    available_game_ids = set(games["game_id"]) if len(games) > 0 else set()
+    if available_game_ids:
+        ratings = ratings[ratings["game_id"].isin(available_game_ids)].copy()
+
+    if max_games is not None and len(ratings) > 0:
+        top_games = [
+            game_id for game_id in ratings["game_id"].value_counts().index if game_id in available_game_ids
+        ][: int(max_games)]
+        if not top_games:
+            top_games = ratings["game_id"].value_counts().head(int(max_games)).index
+        games = games[games["game_id"].isin(top_games)].copy()
+        ratings = ratings[ratings["game_id"].isin(games["game_id"])].copy()
+
+    if max_users is not None and len(ratings) > 0:
+        top_users = ratings["user_id"].value_counts().head(int(max_users)).index
+        ratings = ratings[ratings["user_id"].isin(top_users)].copy()
 
     return ratings.reset_index(drop=True), games.reset_index(drop=True)

@@ -1,9 +1,11 @@
-loss: warp           # warp | bpr | logistic | warp-kos
+loss: warp # warp | bpr | logistic | warp-kos
 no_components: 64
 learning_rate: 0.05
-epochs: 30
+epochs: 10
 item_features:
   - genre
   - mechanics
   - complexity
 run_name: lightfm_baseline
+subset:
+  profile: x5

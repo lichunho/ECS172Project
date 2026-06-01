@@ -1,5 +1,5 @@
 k_values: [5, 10]
-n_groups: 200
+n_groups: 20
 group_sizes: [3, 4, 5]
 baselines:
   - average
@@ -7,3 +7,5 @@ baselines:
   - random
 seed: 42
 run_name: eval_baseline
+subset:
+  profile: x5

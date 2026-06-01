@@ -21,4 +21,19 @@ def aggregate(
     Returns:
         1-D array of length n_items.
     """
-    raise NotImplementedError
+    scores = np.asarray(score_matrix, dtype=float)
+    if scores.ndim == 1:
+        scores = scores[np.newaxis, :]
+
+    method = method.lower().strip()
+    if method == "average":
+        return scores.mean(axis=0)
+    if method == "least_misery":
+        return scores.min(axis=0)
+    if method != "fairness_penalty":
+        raise ValueError(f"unknown aggregation method: {method}")
+
+    mean_score = scores.mean(axis=0)
+    min_score = scores.min(axis=0)
+    disagreement = scores.std(axis=0)
+    return (1.0 - fairness_weight) * mean_score + fairness_weight * min_score - fairness_weight * disagreement

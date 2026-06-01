@@ -1,13 +1,15 @@
 raw_dir: data/raw
 processed_dir: data/processed
-bgg_source: kaggle  # placeholder: kaggle | bgg_api | local
+bgg_source: kaggle # placeholder: kaggle | bgg_api | local
 min_ratings_per_user: 5
 min_ratings_per_game: 10
+subset:
+  profile: x5
 
 # LLM (Ollama) used for context annotation. Host/port come from .env
 # (OLLAMA_HOST / OLLAMA_PORT); only non-secret settings live here.
 llm:
-  model: "gemma4:latest"   # faster AND more accurate than 26b on spot-checks (2026-05-30)
+  model: "gemma4:latest" # faster AND more accurate than 26b on spot-checks (2026-05-30)
   timeout_s: 120
   options:
     temperature: 0.0
@@ -39,13 +41,13 @@ annotation:
     # Tier 2 — derived from category/mechanic tag lookup
     - name: player_elimination
       tier: 2
-      scale: "int 1-5"   # 1=absent, 5=present
+      scale: "int 1-5" # 1=absent, 5=present
     - name: coop_vs_competitive
       tier: 2
       scale: "str: coop | semi-coop | team | competitive"
     - name: social_conflict
       tier: 2
-      scale: "int 1-5"   # 1=absent, 5=present
+      scale: "int 1-5" # 1=absent, 5=present
     # Tier 3 — LLM judgment (one chat call per game)
     - name: party_friendliness
       tier: 3

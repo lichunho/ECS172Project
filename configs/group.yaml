@@ -1,12 +1,14 @@
-user_ids: []          # populate with BGG user ids for a simulated group
+user_ids: [] # populate with BGG user ids for a simulated group
 context:
-  setting: party      # casual | party | competitive
-  familiarity: friends  # friends | strangers
+  setting: party # casual | party | competitive
+  familiarity: friends # friends | strangers
 constraints:
   n_players: 4
   max_playtime_min: 60
 aggregation:
-  method: fairness_penalty  # average | least_misery | fairness_penalty
+  method: fairness_penalty # average | least_misery | fairness_penalty
   fairness_weight: 0.5
 top_k: 10
 run_name: group_example
+subset:
+  profile: x5
