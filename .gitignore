@@ -12,7 +12,6 @@ env/
 archive/
 plans/
 models/
-results/
 .claude/
 
 # Data: the raw Kaggle dump is public, oversized (one file >100 MB), and
