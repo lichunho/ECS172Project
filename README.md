@@ -11,8 +11,12 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Note: `lightfm` may require build tools (Xcode CLI on macOS, build-essential on Linux). If
-installation fails, install a system C/C++ toolchain first and retry.
+Note: the preference model (`src/preference.py`) is an explicit-rating matrix
+factorization built on scipy/scikit-learn (global mean + user/item bias +
+truncated SVD on residuals). It predicts the 1–10 rating, so RMSE is meaningful.
+LightFM is no longer used — it has no build for this environment (Python 3.13 /
+numpy 2.x); the rest of the pipeline depends only on `PreferenceModel`'s public
+interface, so the swap is transparent.
 
 ### LLM server (context annotation)
 
@@ -53,4 +57,10 @@ python scripts/evaluate.py         --config configs/eval.yaml
 - `src/` — reusable modules (data, preference model, constraints, aggregation, context, baselines, metrics).
 - `scripts/` — thin entrypoints; arg parsing and orchestration only.
 - `configs/` — YAML configs versioned in git.
+- `documentation/` — developer reference (architecture, pipeline, schemas, config, modules, roadmap).
 - `data/`, `models/`, `results/` — gitignored artifacts.
+
+## Documentation
+
+Developer reference docs live in [`documentation/`](documentation/) — start at
+[`documentation/README.md`](documentation/README.md).
