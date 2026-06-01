@@ -1,6 +1,6 @@
 processed_dir: data/processed
 model_run_name: lightfm_baseline   # which models/<name>/model.pkl to load
-user_ids: []          # populate with dense user ids for a simulated group
+user_ids: [37603, 26676, 164243]   # a simulated divergent group (from eval groups.json)
 context:
   setting: party      # casual | party | competitive
   familiarity: friends  # friends | strangers
