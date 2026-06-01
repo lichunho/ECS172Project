@@ -39,6 +39,15 @@ Smoke-test the full annotation pipeline on 3 in-memory games (no `games.parquet`
 python tests/test_annotate.py --config configs/data.yaml
 ```
 
+### Unit tests
+
+The `src/` modules for M3–M6 have a pytest suite (pure in-memory; no data, model, or
+LLM server required):
+
+```bash
+pytest tests/ -q
+```
+
 ## Pipeline
 
 All scripts read a YAML config and write outputs under `results/<run_name>/`.
