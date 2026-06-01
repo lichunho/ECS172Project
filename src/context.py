@@ -34,6 +34,7 @@ _SETTING_WEIGHTS: dict[str, dict[str, float]] = {
         "interaction_level": 0.6,
         "complexity": -0.5,
         "downtime": -0.4,
+        "player_elimination": -0.4,  # eliminated members sit idle -> tanks party play
     },
     "competitive": {
         "competitiveness": 1.0,
@@ -50,6 +51,8 @@ _FAMILIARITY_WEIGHTS: dict[str, dict[str, float]] = {
         "teach_time": -0.4,
         "social_conflict": -0.3,
         "mixed_skill_robustness": 0.3,
+        "min_age_fit": 0.3,          # high = accessible to all ages -> safer for mixed groups
+        "player_elimination": -0.4,  # knocking a stranger out early is a bad first impression
     },
     "friends": {},
 }
