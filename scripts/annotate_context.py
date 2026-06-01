@@ -46,19 +46,31 @@ def main() -> None:
     model = llm_cfg["model"]
     timeout = float(llm_cfg.get("timeout_s", 120))
     options = llm_cfg.get("options")
+    concurrency = int(llm_cfg.get("concurrency", 1))
+    checkpoint_every = int(llm_cfg.get("checkpoint_every", 100))
 
     src_path = processed_dir / "games.parquet"
     dst_path = processed_dir / "games_annotated.parquet"
+    # Persists across runs to enable Tier-3 resume; NOT archived with the output.
+    checkpoint_path = processed_dir / "games_annotated.tier3_checkpoint.parquet"
 
     # Archive any existing annotated file before overwriting.
     if dst_path.exists():
         archive_dir = Path("archive") / f"{datetime.date.today().isoformat()}_annotations"
         archive_dir.mkdir(parents=True, exist_ok=True)
         shutil.move(str(dst_path), str(archive_dir / "games_annotated.parquet"))
-        print(f"Archived existing annotations → {archive_dir}/")
+        print(f"Archived existing annotations -> {archive_dir}/")
 
     games = pd.read_parquet(src_path)
     print(f"Loaded {len(games)} games from {src_path}")
+
+    # Restrict the expensive Tier-3 LLM pass to games with enough ratings.
+    tier3_ids = None
+    min_ratings = cfg.get("annotation", {}).get("tier3_min_ratings")
+    if min_ratings:
+        counts = pd.read_parquet(processed_dir / "ratings.parquet")["game_id"].value_counts()
+        tier3_ids = set(counts[counts >= int(min_ratings)].index)
+        print(f"Tier-3 scope: {len(tier3_ids)} games with >= {min_ratings} ratings")
 
     annotated = annotate.annotate_games(
         games,
@@ -67,11 +79,15 @@ def main() -> None:
         model=model,
         options=options,
         timeout=timeout,
+        concurrency=concurrency,
+        checkpoint_path=checkpoint_path,
+        checkpoint_every=checkpoint_every,
+        tier3_ids=tier3_ids,
     )
 
     dst_path.parent.mkdir(parents=True, exist_ok=True)
     annotated.to_parquet(dst_path)
-    print(f"Wrote {len(annotated)} annotated games → {dst_path}")
+    print(f"Wrote {len(annotated)} annotated games -> {dst_path}")
 
 
 if __name__ == "__main__":

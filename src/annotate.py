@@ -11,9 +11,13 @@ context label column appended.
 
 from __future__ import annotations
 
+import concurrent.futures as cf
 import json
 import math
+import os
+from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 from src import llm
@@ -99,10 +103,10 @@ Scale definitions:
 def _tags_string(value: object) -> str:
     """Return a lower-cased concatenation of category/mechanic tokens.
 
-    Accepts a Python list (from parquet) or a delimited string (pipe, comma,
+    Accepts a list/ndarray (from parquet) or a delimited string (pipe, comma,
     semicolon) — BGG data arrives in either form depending on the source.
     """
-    if isinstance(value, list):
+    if isinstance(value, (list, np.ndarray)):
         return " | ".join(str(v) for v in value).lower()
     if pd.isna(value):
         return ""
@@ -255,6 +259,48 @@ def _parse_tier3_response(content: str, game_name: str) -> dict:
     return result
 
 
+def _load_tier3_checkpoint(path: str | os.PathLike | None) -> dict:
+    """Load {game_id: {label: value}} from a checkpoint parquet, or {} if absent."""
+    if path is None or not Path(path).exists():
+        return {}
+    df = pd.read_parquet(path)
+    return {
+        row["game_id"]: {lbl: row[lbl] for lbl in _TIER3_LABELS}
+        for _, row in df.iterrows()
+    }
+
+
+def _save_tier3_checkpoint(path: str | os.PathLike, done: dict) -> None:
+    """Atomically write {game_id: {label: value}} to a checkpoint parquet."""
+    rows = [{"game_id": gid, **labels} for gid, labels in done.items()]
+    df = pd.DataFrame(rows, columns=["game_id", *_TIER3_LABELS])
+    tmp = Path(str(path) + ".tmp")
+    df.to_parquet(tmp)
+    os.replace(tmp, path)
+
+
+def _tier3_one(
+    row: pd.Series,
+    *,
+    host: str,
+    port: str | int,
+    model: str,
+    options: dict | None,
+    timeout: float,
+) -> tuple[object, dict]:
+    """Annotate one game via the LLM. Returns (game_id, labels)."""
+    game_id = row.get("game_id")
+    game_name = str(row.get("name", f"id={game_id}"))
+    messages = [{"role": "user", "content": _build_prompt(row)}]
+    content = llm.chat(
+        host, port, model, messages,
+        options=options,
+        fmt=_TIER3_SCHEMA,
+        timeout=timeout,
+    )
+    return game_id, _parse_tier3_response(content, game_name)
+
+
 def _apply_tier3(
     games: pd.DataFrame,
     *,
@@ -263,20 +309,58 @@ def _apply_tier3(
     model: str,
     options: dict | None,
     timeout: float,
+    concurrency: int = 1,
+    checkpoint_path: str | os.PathLike | None = None,
+    checkpoint_every: int = 100,
+    tier3_ids: set | None = None,
 ) -> pd.DataFrame:
-    """Call the LLM for each game and add Tier-3 label columns."""
-    tier3_rows: list[dict] = []
-    for _, row in games.iterrows():
-        game_name = str(row.get("name", f"id={row.get('game_id', '?')}"))
-        messages = [{"role": "user", "content": _build_prompt(row)}]
-        content = llm.chat(
-            host, port, model, messages,
-            options=options,
-            fmt=_TIER3_SCHEMA,
-            timeout=timeout,
-        )
-        tier3_rows.append(_parse_tier3_response(content, game_name))
+    """Call the LLM for each game (concurrently) and add Tier-3 label columns.
 
+    Resumable: games already present in the checkpoint at *checkpoint_path* are
+    skipped, and results are flushed there every *checkpoint_every* completions
+    so a crash resumes where it left off. A game whose call fails is logged and
+    left out of the checkpoint, so the next run retries it.
+
+    If *tier3_ids* is given, only those game_ids are candidates for the LLM pass;
+    every other game gets NA Tier-3 labels (backfill later by widening the set).
+    """
+    done = _load_tier3_checkpoint(checkpoint_path)
+    candidates = games if tier3_ids is None else games[games["game_id"].isin(tier3_ids)]
+    todo = candidates[~candidates["game_id"].isin(done.keys())]
+    print(
+        f"Tier-3: {len(done)} cached, {len(todo)} to annotate "
+        f"(concurrency={concurrency})"
+    )
+
+    if len(todo) > 0:
+        with cf.ThreadPoolExecutor(max_workers=concurrency) as ex:
+            futures = {
+                ex.submit(
+                    _tier3_one, row,
+                    host=host, port=port, model=model,
+                    options=options, timeout=timeout,
+                ): row.get("game_id")
+                for _, row in todo.iterrows()
+            }
+            since_flush = 0
+            for fut in cf.as_completed(futures):
+                gid = futures[fut]
+                try:
+                    game_id, labels = fut.result()
+                except Exception as exc:  # one bad game must not abort the run
+                    print(f"  WARN Tier-3 failed for game_id={gid}: {exc} (retry next run)")
+                    continue
+                done[game_id] = labels
+                since_flush += 1
+                if checkpoint_path is not None and since_flush >= checkpoint_every:
+                    _save_tier3_checkpoint(checkpoint_path, done)
+                    since_flush = 0
+                    print(f"  checkpoint: {len(done)}/{len(games)} done")
+            if checkpoint_path is not None:
+                _save_tier3_checkpoint(checkpoint_path, done)
+
+    na_row = {lbl: pd.NA for lbl in _TIER3_LABELS}
+    tier3_rows = [done.get(row.get("game_id"), na_row) for _, row in games.iterrows()]
     tier3_df = pd.DataFrame(tier3_rows, index=games.index)
     return pd.concat([games, tier3_df], axis=1)
 
@@ -293,6 +377,10 @@ def annotate_games(
     model: str,
     options: dict | None,
     timeout: float,
+    concurrency: int = 1,
+    checkpoint_path: str | os.PathLike | None = None,
+    checkpoint_every: int = 100,
+    tier3_ids: set | None = None,
 ) -> pd.DataFrame:
     """Annotate each game with context labels across three tiers.
 
@@ -336,5 +424,12 @@ def annotate_games(
     """
     out = _apply_tier1(games)
     out = _apply_tier2(out)
-    out = _apply_tier3(out, host=host, port=port, model=model, options=options, timeout=timeout)
+    out = _apply_tier3(
+        out,
+        host=host, port=port, model=model, options=options, timeout=timeout,
+        concurrency=concurrency,
+        checkpoint_path=checkpoint_path,
+        checkpoint_every=checkpoint_every,
+        tier3_ids=tier3_ids,
+    )
     return out

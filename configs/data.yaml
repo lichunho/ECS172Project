@@ -7,14 +7,24 @@ min_ratings_per_game: 10
 # LLM (Ollama) used for context annotation. Host/port come from .env
 # (OLLAMA_HOST / OLLAMA_PORT); only non-secret settings live here.
 llm:
-  model: "gemma4:26b"
+  model: "gemma4:latest"   # faster AND more accurate than 26b on spot-checks (2026-05-30)
   timeout_s: 120
   options:
     temperature: 0.0
+  # This Ollama host serializes on one GPU, so concurrency>1 only causes queue
+  # timeouts (it does not speed anything up). Raise only if OLLAMA_NUM_PARALLEL
+  # is increased server-side. Checkpoint flushes every N completed games to resume.
+  concurrency: 1
+  checkpoint_every: 100
 
 # Context label schema produced by src/annotate.py.
 # tier: 1=BGG field reshape, 2=category/mechanic rule, 3=LLM judgment
 annotation:
+  # Only run the expensive Tier-3 LLM pass on games with at least this many
+  # ratings (the games groups actually pick). Tier-1/2 still run on every game;
+  # games below the threshold get NA Tier-3 labels, backfilled by lowering this
+  # and re-running (resumes from checkpoint). null/omit = annotate all games.
+  tier3_min_ratings: 500
   labels:
     # Tier 1 — reshaped from BGG structured fields
     - name: language_dependence

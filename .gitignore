@@ -10,10 +10,20 @@ env/
 
 # Project artifacts
 archive/
-data/
+plans/
 models/
 results/
-plans/
+.claude/
+
+# Data: the raw Kaggle dump is public, oversized (one file >100 MB), and
+# re-downloadable, so it stays out. Track only the small derived tables
+# (public BGG data + our context labels) plus the ratings parquet.
+data/*
+!data/processed/
+data/processed/*
+!data/processed/games.parquet
+!data/processed/games_annotated.parquet
+!data/processed/ratings.parquet
 
 # Secrets / env
 .env
