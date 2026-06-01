@@ -1,9 +1,17 @@
-loss: warp           # warp | bpr | logistic | warp-kos
+processed_dir: data/processed
+# Engine note: this project ships an explicit-rating matrix-factorization model
+# (src/preference.py), not LightFM (no build for Python 3.13 / numpy 2.x).
+# `loss`, `learning_rate`, and `epochs` are inert for the SVD engine and kept
+# only for config/interface compatibility; `no_components` is the latent dim.
+loss: warp           # inert (kept for compatibility)
 no_components: 64
-learning_rate: 0.05
-epochs: 30
-item_features:
+learning_rate: 0.05  # inert
+epochs: 30           # inert
+bias_reg: 5.0        # regularization for the user/item bias terms
+item_features:       # inert: this engine is collaborative-filtering only
   - genre
   - mechanics
   - complexity
+# Legacy name: the engine is the explicit-rating MF above, NOT LightFM. Kept so the
+# existing models/lightfm_baseline/ artifact and group.yaml model_run_name stay in sync.
 run_name: lightfm_baseline
