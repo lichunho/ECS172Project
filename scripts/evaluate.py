@@ -137,8 +137,12 @@ def _evaluate(cfg: dict, context_gamma: float | None = None):
 
                 ndcg = float(np.mean(member_ndcgs))
                 prec = float(np.mean(member_precs))
-                sat_var = metrics.satisfaction_variance(member_ndcgs)
-                min_sat = metrics.min_satisfaction(member_ndcgs)
+                # Fairness in rating space: each member's mean predicted utility over
+                # the top-k recommended items. Decoupled from ranking-accuracy
+                # magnitude, so variance/min measure equity rather than echoing NDCG.
+                member_sat = score_matrix[:, order[:k]].mean(axis=1)
+                sat_var = metrics.satisfaction_variance(member_sat)
+                min_sat = metrics.min_satisfaction(member_sat)
                 row = (ndcg, prec, sat_var, min_sat)
                 records[(method, k, "overall")].append(row)
                 records[(method, k, g.group_type)].append(row)
