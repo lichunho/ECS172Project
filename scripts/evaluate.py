@@ -30,7 +30,7 @@ from src import aggregation, baselines, constraints, context, metrics  # noqa: E
 from src.groups import Group  # noqa: E402
 from src.preference import PreferenceModel  # noqa: E402
 
-_METHODS = ["ours", "average", "least_misery", "random"]
+_METHODS = ["ours", "ours_no_context", "average", "least_misery", "random"]
 
 
 def _split(ratings: pd.DataFrame, test_frac: float, seed: int):
@@ -42,29 +42,30 @@ def _split(ratings: pd.DataFrame, test_frac: float, seed: int):
     return shuffled[~test_mask].copy(), shuffled[test_mask].copy()
 
 
-def _group_scores(method, score_matrix, candidates, feasible, ctx, agg_cfg, seed):
+def _group_scores(method, score_matrix, candidates, feasible, ctx, agg_cfg, seed, gamma=None):
     if method == "average":
         return baselines.average_baseline(score_matrix)
     if method == "least_misery":
         return baselines.least_misery_baseline(score_matrix)
     if method == "random":
         return baselines.random_baseline(len(candidates), seed=seed)
-    # ours: fairness aggregation + context adjustment
+    # ours_no_context: fairness aggregation only (context layer ablated).
     gs = aggregation.aggregate(score_matrix, **agg_cfg)
-    return context.adjust(gs, feasible, ctx)
+    if method == "ours_no_context":
+        return gs
+    # ours: fairness aggregation + context adjustment
+    return context.adjust(gs, feasible, ctx, gamma=gamma)
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--config", required=True)
-    args = parser.parse_args()
+def _evaluate(cfg: dict, context_gamma: float | None = None):
+    """Run the full group evaluation and return (table, model_rmse, n_groups, skipped).
 
-    with open(args.config) as f:
-        cfg = yaml.safe_load(f)
-
+    Pure compute: reads inputs and returns a tidy metrics DataFrame; the caller
+    owns persistence. `context_gamma` overrides the context re-weighting strength
+    for the 'ours' method (None = module default), which the gamma sweep varies.
+    """
     processed_dir = Path(cfg["processed_dir"])
     out_dir = Path("results") / cfg["run_name"]
-    out_dir.mkdir(parents=True, exist_ok=True)
     seed = cfg["seed"]
     k_values = cfg["k_values"]
     agg_cfg = cfg["aggregation"]
@@ -120,7 +121,7 @@ def main() -> None:
 
         for method in _METHODS:
             gs = _group_scores(method, score_matrix, candidates, feasible,
-                               g.context, agg_cfg, seed)
+                               g.context, agg_cfg, seed, gamma=context_gamma)
             order = np.argsort(-gs)
             ranked = candidates[order]
 
@@ -152,12 +153,28 @@ def main() -> None:
             "sat_variance": arr[:, 2].mean(), "min_satisfaction": arr[:, 3].mean(),
         })
     table = pd.DataFrame(rows)
+    return table, model_rmse, len(sim_groups), skipped
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--config", required=True)
+    args = parser.parse_args()
+
+    with open(args.config) as f:
+        cfg = yaml.safe_load(f)
+
+    out_dir = Path("results") / cfg["run_name"]
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    table, model_rmse, n_groups, skipped = _evaluate(cfg)
+
     table.to_csv(out_dir / "metrics.csv", index=False)
     with open(out_dir / "summary.json", "w") as f:
-        json.dump({"model_rmse": model_rmse, "n_groups": len(sim_groups),
+        json.dump({"model_rmse": model_rmse, "n_groups": n_groups,
                    "skipped": skipped}, f, indent=2)
 
-    _plots(table, k_values, out_dir)
+    _plots(table, cfg["k_values"], out_dir)
     print(f"\nSkipped {skipped} groups (too few feasible candidates).")
     print(table[table["scope"] == "overall"].to_string(index=False))
     print(f"\nWrote metrics -> {out_dir/'metrics.csv'} and plots -> {out_dir}")

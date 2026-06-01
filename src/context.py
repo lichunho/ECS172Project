@@ -65,14 +65,17 @@ def _centered(series: pd.Series) -> np.ndarray:
     return np.nan_to_num(centered, nan=0.0)
 
 
-def adjust(scores: np.ndarray, games: pd.DataFrame, context: dict) -> np.ndarray:
+def adjust(scores: np.ndarray, games: pd.DataFrame, context: dict,
+           gamma: float | None = None) -> np.ndarray:
     """Re-weight item scores by the (setting, familiarity) context.
 
     Args:
         scores: 1-D array aligned with `games`.
         games: DataFrame with annotated context label columns.
         context: e.g. {'setting': 'party', 'familiarity': 'friends'}.
+        gamma: re-weighting strength; falls back to module GAMMA when None.
     """
+    g = GAMMA if gamma is None else gamma
     scores = np.asarray(scores, dtype="float64")
     weights: dict[str, float] = {}
     for label, w in _SETTING_WEIGHTS.get(context.get("setting", ""), {}).items():
@@ -88,7 +91,7 @@ def adjust(scores: np.ndarray, games: pd.DataFrame, context: dict) -> np.ndarray
         if label in games.columns:
             context_term += w * _centered(games[label])
 
-    factor = np.clip(1.0 + GAMMA * context_term, 0.1, None)
+    factor = np.clip(1.0 + g * context_term, 0.1, None)
     return scores * factor
 
 
