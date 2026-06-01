@@ -1,4 +1,6 @@
-user_ids: []          # populate with BGG user ids for a simulated group
+processed_dir: data/processed
+model_run_name: lightfm_baseline   # which models/<name>/model.pkl to load
+user_ids: []          # populate with dense user ids for a simulated group
 context:
   setting: party      # casual | party | competitive
   familiarity: friends  # friends | strangers
