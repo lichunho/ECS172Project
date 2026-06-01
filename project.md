@@ -86,6 +86,10 @@ We compare our system against average aggregation, least misery, and random reco
 
 We use an LLM-as-judge to evaluate alignment with preferences, context, and constraints. If feasible, we also conduct a small human evaluation.
 
+### Limitations
+
+We could not find a way to *reward* context-awareness with our quantitative metrics. Our ground truth is members' held-out BoardGameGeek ratings, which carry no record of the social setting in which they were given. The context layer re-weights games toward a setting (e.g. party-friendly games for a party group), which by construction moves the ranking away from that context-free target — so a gamma sweep of the context strength showed every positive value only lowered NDCG and fairness, with no sweet spot. We therefore disable context (GAMMA=0) for the reported accuracy/fairness numbers; "ours" there is the fairness aggregation alone. Demonstrating context's value would require a context-aware ground truth (ratings tagged with the setting, or the human/LLM-as-judge evaluation above), which our rating-based benchmark cannot provide.
+
 ## References
 
 Tommasel, A., & Diaz-Pace, J. A. (2024). Leveraging Monte Carlo Tree Search for Group Recommendation. RecSys 2024.

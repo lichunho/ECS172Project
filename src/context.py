@@ -19,7 +19,12 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-GAMMA = 0.5
+# Context re-weighting strength. Set to 0 (context disabled) because our held-out
+# rating evaluation has no social-context ground truth, so it cannot reward context
+# adjustment: a gamma sweep showed every gamma > 0 only lowered NDCG and fairness.
+# The weight tables below are retained for the qualitative recommender and any
+# future context-aware evaluation. Raise gamma to re-enable context re-weighting.
+GAMMA = 0.0
 
 # weight[setting][label]: how strongly a high label pushes the score up (+) or down (-).
 _SETTING_WEIGHTS: dict[str, dict[str, float]] = {
