@@ -2,7 +2,8 @@ numpy
 pandas
 scipy
 scikit-learn
-lightfm
+# lightfm  # original preference engine; no build for Python 3.13 / numpy 2.x.
+# Replaced by a scipy/scikit-learn matrix factorization in src/preference.py.
 pyyaml
 tqdm
 matplotlib
