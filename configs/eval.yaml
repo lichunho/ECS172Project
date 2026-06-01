@@ -1,3 +1,4 @@
+processed_dir: data/processed
 k_values: [5, 10]
 n_groups: 200
 group_sizes: [3, 4, 5]
@@ -7,3 +8,25 @@ baselines:
   - random
 seed: 42
 run_name: eval_baseline
+
+# Group simulation: taste clustering + the similar/divergent/random mix.
+# Divergent groups are what make the fairness/aggregation differences visible.
+min_user_ratings: 20      # users below this are excluded from sampling
+n_taste_clusters: 8
+group_mix:
+  similar: 0.34
+  divergent: 0.33
+  random: 0.33
+
+# Leak-free evaluation: a fresh model is trained on a held-out split inside
+# evaluate.py (independent of scripts/train.py's full-data model).
+test_frac: 0.2            # per-user fraction of ratings held out as ground truth
+relevant_threshold: 8.0   # held-out rating >= this counts as "relevant" for P@K
+model:
+  no_components: 64
+  bias_reg: 5.0
+
+# "Our" method's aggregation settings (compared against the baselines above).
+aggregation:
+  method: fairness_penalty
+  fairness_weight: 0.5
